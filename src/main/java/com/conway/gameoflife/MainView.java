@@ -25,12 +25,6 @@ public class MainView extends AnchorPane {
         canvas = new Canvas(MAX_WIDTH, CANVAS_HEIGHT);
         gc = canvas.getGraphicsContext2D();
 
-        gc.setFill(Color.BLUE);
-        gc.setStroke(Color.BLACK);
-        gc.setLineWidth(2.0);
-        Cell cell = new Cell(3,3,596);
-        cell.draw(gc);
-
         reset = new Button("Reset");
         step = new Button("Step");
         run = new Button("Run");

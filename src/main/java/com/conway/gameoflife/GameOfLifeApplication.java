@@ -21,9 +21,20 @@ public class GameOfLifeApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Game of Life");
         MainView mainView = new MainView(MAX_WIDTH, MAX_HEIGHT, CANVAS_HEIGHT);
+        //mainView.getGc().fillRect(4,4,40,40);
         Scene scene = new Scene(mainView.getAnchorPane());
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        Board board = new Board(50, mainView.getCanvas());
+        board.getCell(1,1).setState(StateOfCell.ALIVE);
+        board.getCell(10,10).setState(StateOfCell.ALIVE);
+
+
+        board.drawGrid(mainView.getGc(), mainView.getCanvas());
+
+
+        //wait for events
     }
 
     public static void main(String[] args) {
