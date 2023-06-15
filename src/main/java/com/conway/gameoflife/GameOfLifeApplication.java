@@ -27,11 +27,12 @@ public class GameOfLifeApplication extends Application {
         primaryStage.show();
 
         Board board = new Board(50, mainView.getCanvas());
-        board.getCell(1,1).setState(StateOfCell.ALIVE);
-        board.getCell(10,10).setState(StateOfCell.ALIVE);
-
-
         board.drawGrid(mainView.getGc(), mainView.getCanvas());
+
+        mainView.getCanvas().setOnMouseClicked(mouseEvent -> {
+            board.whichCellWasClicked(mouseEvent.getX(), mouseEvent.getY()).setState(StateOfCell.ALIVE);
+            board.drawGrid(mainView.getGc(), mainView.getCanvas());
+        });
 
 
         //wait for events

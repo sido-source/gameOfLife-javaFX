@@ -39,11 +39,11 @@ public class Board {
             }
     }
 
-    public Cell whichCellWasClicked(int x, int y) {
+    public Cell whichCellWasClicked(double x, double y) {
         // TODO: Implement logic to determine the clicked cell based on the coordinates (x, y)
-        // Iterate over the boardGame and compare the coordinates of each cell with the clicked position
-        // Return the matching cell
-        return null;
+        int row = (int)((x - padding) / scale);
+        int column = (int)((y - padding) / scale);
+        return boardGame[row][column];
     }
 
 
