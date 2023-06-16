@@ -1,5 +1,6 @@
 package com.conway.gameoflife;
 
+import com.conway.gameoflife.enums.StateOfCell;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -16,7 +17,7 @@ public class Cell{
 
     private Rectangle rectangle;
     private int liveNeighbours = 0;
-    private StateOfCell state = StateOfCell.DEAD;
+    private StateOfCell state;
 
     public Cell(double x, double y, double a) throws Exception {
         if(a<0){
@@ -24,13 +25,9 @@ public class Cell{
         }else if (x < 0 && y < 0){
             throw new Exception("X and Y must be greater than 0");
         }
+        state = StateOfCell.DEAD;
         rectangle = new Rectangle(x,y,a,a);
-         new Rectangle(x,y,a,a);
-
-    }
-    public void checkNeighbours() {
-        // TODO: Implement logic to count live neighbours of the cell
-        //set live neighbours
+        new Rectangle(x,y,a,a);
     }
 
     public int getLiveNeighbours() {

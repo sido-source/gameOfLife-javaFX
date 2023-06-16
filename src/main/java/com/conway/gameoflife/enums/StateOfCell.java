@@ -1,4 +1,4 @@
-package com.conway.gameoflife;
+package com.conway.gameoflife.enums;
 
 public enum StateOfCell {
     DEAD,

@@ -1,11 +1,10 @@
-package com.conway.gameoflife;
+package com.conway.gameoflife.views;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 
 public class MainView extends AnchorPane {
 

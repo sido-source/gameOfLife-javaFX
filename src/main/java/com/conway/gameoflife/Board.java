@@ -1,17 +1,14 @@
 package com.conway.gameoflife;
 
 
+import com.conway.gameoflife.enums.StateOfCell;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 public class Board {
 
     private int gridSize;
-
-
-
     private Cell[][] boardGame;
     private double scale;
     private final int padding = 2;
@@ -25,7 +22,7 @@ public class Board {
         initializeBoard();
 
     }
-    private void initializeBoard() throws Exception {
+    public void initializeBoard() throws Exception {
 
         for (int i=0; i< gridSize; i++)
             for (int j=0; j< gridSize; j++){
@@ -34,8 +31,6 @@ public class Board {
                 }else {
                     boardGame[i][j] = new Cell(padding + scale * i, padding + scale * j, scale);
                 }
-
-
             }
     }
 
@@ -71,7 +66,17 @@ public class Board {
     }
 
     public Cell getCell(int i, int j){
-        return boardGame[i-1][j-1];
+        return boardGame[i][j];
+    }
+    public int getGridSize() {
+        return gridSize;
     }
 
+    public double getScale(){
+        return scale;
+    }
+
+    public void setBoardGame(Cell[][] boardGame) {
+        this.boardGame = boardGame;
+    }
 }
